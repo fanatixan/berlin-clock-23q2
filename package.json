@@ -1,18 +1,18 @@
 {
-  "name": "template-nodejs",
+  "name": "",
   "version": "1.0.0",
   "description": "Template for basing repositories off",
-  "homepage": "https://github.ibm.com/GOTREASA/template-nodejs#readme",
+  "homepage": "https://github.ibm.com/GOTREASA/#readme",
   "bugs": {
-    "url": "https://github.ibm.com/GOTREASA/template-nodejs/issues"
+    "url": "https://github.ibm.com/GOTREASA//issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.ibm.com/GOTREASA/template-nodejs.git"
+    "url": "git+https://github.ibm.com/GOTREASA/.git"
   },
   "license": "Apache-2.0",
   "author": "Gearoid O'Treasaigh",
-  "main": "src/template-nodejs.js",
+  "main": "src/.js",
   "scripts": {
     "build:postman": "portman --cliOptionsFile portman/portman-cli.json",
     "detect-secrets": "cross-env-shell docker run --rm -v ${INIT_CWD}:/code ibmcom/detect-secrets-hook:0.13.1.ibm.47.dss --baseline .secrets.baseline",
@@ -25,7 +25,7 @@
     "prepare": "husky install",
     "pre-push": "npm-run-all test test:security",
     "requirements-check": "node check_node_version.js",
-    "start": "node src/template-nodejs.js",
+    "start": "node src/.js",
     "start:app": "node app.js",
     "start:app:dev": "nodemon app.js",
     "start:swagger": "docker run --rm -p 3080:8080 -e SWAGGER_JSON=/definition/openapi.yml -v $(pwd)/test/mock/openapi.yaml:/definition/openapi.yaml swaggerapi/swagger-ui:latest",
@@ -58,7 +58,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.17.2",
-    "helmet": "^5.0.1",
+    "helmet": "^5.0.2",
     "semver": "^7.3.5"
   },
   "devDependencies": {
@@ -67,31 +67,31 @@
     "@commitlint/config-conventional": "^16.0.0",
     "@commitlint/travis-cli": "^16.1.0",
     "@types/cors": "^2.8.12",
-    "@types/eslint": "^8.4.0",
+    "@types/eslint": "^8.4.1",
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.4.0",
-    "@types/newman": "^5.1.4",
+    "@types/newman": "^5.3.0",
     "@types/nodemon": "^1.19.1",
     "@types/prettier": "^2.4.3",
     "@types/semver": "^7.3.9",
     "chokidar-cli": "^3.0.0",
     "cross-env": "^7.0.3",
-    "eslint": "^8.7.0",
+    "eslint": "^8.8.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.4",
-    "eslint-plugin-jest": "^25.7.0",
+    "eslint-plugin-jest": "^26.0.0",
     "eslint-plugin-prettier": "^4.0.0",
     "husky": "^7.0.4",
     "jest": "^27.4.7",
     "jest-cucumber-fusion": "^0.8.1",
-    "lint-staged": "^12.2.2",
+    "lint-staged": "^12.3.2",
     "newman": "^5.3.1",
     "nodemon": "^2.0.15",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.5.1",
-    "snyk": "^1.833.0",
+    "snyk": "^1.841.0",
     "sort-package-json": "^1.53.1",
     "typesync": "^0.8.0"
   },
