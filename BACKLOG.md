@@ -106,9 +106,31 @@ When taking a look at the Berlin Clock
 Then the fourth row of lights shows <pattern>
 
 Examples:
-  | time     | pattern |
-:
-  @TODO
+  | time     | pattern     |
+  | 00:00:00 | OOOOOOOOOOO |
+  | 07:04:15 | OOOOOOOOOOO |
+  | 04:05:06 | YOOOOOOOOOO |
+  | 11:09:53 | YOOOOOOOOOO |
+  | 23:10:24 | YYOOOOOOOOO |
+  | 19:14:42 | YYOOOOOOOOO |
+  | 16:15:33 | YYROOOOOOOO |
+  | 18:19:38 | YYROOOOOOOO |
+  | 05:20:01 | YYRYOOOOOOO |
+  | 03:24:38 | YYRYOOOOOOO |
+  | 12:25:10 | YYRYYOOOOOO |
+  | 23:29:50 | YYRYYOOOOOO |
+  | 04:30:07 | YYRYYROOOOO |
+  | 15:34:22 | YYRYYROOOOO |
+  | 17:35:12 | YYRYYRYOOOO |
+  | 11:39:02 | YYRYYRYOOOO |
+  | 07:40:01 | YYRYYRYYOOO |
+  | 22:44:07 | YYRYYRYYOOO |
+  | 08:45:14 | YYRYYRYYROO |
+  | 15:49:01 | YYRYYRYYROO |
+  | 20:50:04 | YYRYYRYYRYO |
+  | 01:54:12 | YYRYYRYYRYO |
+  | 10:55:31 | YYRYYRYYRYY |
+  | 12:59:47 | YYRYYRYYRYY |
 ```
 
 # US5 - 1 minute
@@ -119,7 +141,7 @@ I want to have row of lights for minutes
 So that I'll know more preciesly where we are at in the hour
 ```
 
-## UAT 5.1 - 1 Hour
+## UAT 5.1 - 1 Minute
 
 ```
 Given <time>
@@ -128,5 +150,14 @@ Then the fifth row of lights shows <pattern>
 
 Examples:
   | time     | pattern |
-  @TODO
+  | 00:00:00 |    OOOO |
+  | 07:01:15 |    YOOO |
+  | 04:02:06 |    YYOO |
+  | 11:03:53 |    YYYO |
+  | 23:04:24 |    YYYY |
+  | 19:05:42 |    OOOO |
+  | 16:16:33 |    YOOO |
+  | 18:37:38 |    YYOO |
+  | 05:48:01 |    YYYO |
+  | 03:19:38 |    YYYY |
 ```
