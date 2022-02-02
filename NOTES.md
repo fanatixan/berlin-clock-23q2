@@ -12,7 +12,7 @@ Driver: Gearóid
 Navigator: Attila  
 Observer: Julian
 
-- 🚧 UAT1.1 - Odd Seconds - light is unlit
+- ✅ UAT1.1 - Odd Seconds - light is unlit
 
 ```
 Examples:
