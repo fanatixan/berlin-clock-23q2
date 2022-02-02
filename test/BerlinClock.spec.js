@@ -12,6 +12,7 @@ describe('Berlin Clock', () => {
   test.each`
     input
     ${'12:00:02'}
+    ${'13:00:04'}
   `('should have a lit second light for ($input)', ({ input }) => {
     expect(toBerlinTime(input).seconds).toBe('Y');
   });
