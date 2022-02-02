@@ -74,6 +74,8 @@ Examples:
   | 21:38:15 |    RRRR |
 ```
 
+- 🚧 refactor toBerlinTime function
+
 - UAT 3.1 - 1 Hour
 
 ```

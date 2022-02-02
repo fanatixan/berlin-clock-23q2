@@ -1,14 +1,35 @@
-const toBerlinTime = (input) => {
-  const time = input.split(':');
-  const hours = parseInt(time[0], 10);
-  const seconds = parseInt(time[2], 10);
+const RED = 'R';
+const YELLOW = 'Y';
+const OFF = 'O';
 
+const fiveHourLightCount = 4;
+
+const toSecondsPattern = (seconds) => {
+  if (seconds % 2 === 0) {
+    return YELLOW;
+  }
+  return OFF;
+};
+
+const toFiveHoursPattern = (hours) => {
   const fiveHourCount = Math.floor(hours / 5);
-  const fiveHours = 'R'.repeat(fiveHourCount) + 'O'.repeat(4 - fiveHourCount);
+  return (
+    RED.repeat(fiveHourCount) + OFF.repeat(fiveHourLightCount - fiveHourCount)
+  );
+};
+
+const parseTime = (timeString) => timeString.split(':').map((segment) => parseInt(segment, 10));
+
+const toBerlinTime = (input) => {
+  const [hours, , seconds] = parseTime(input);
+
+  const secondsPattern = toSecondsPattern(seconds);
+  const fiveHoursPattern = toFiveHoursPattern(hours);
 
   return {
-    seconds: seconds % 2 === 0 ? 'Y' : 'O',
-    fiveHours,
+    seconds: secondsPattern,
+    fiveHours: fiveHoursPattern,
   };
 };
+
 module.exports = toBerlinTime;
