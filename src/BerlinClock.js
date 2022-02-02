@@ -4,7 +4,7 @@ const toBerlinTime = (input) => {
   const seconds = parseInt(time[2], 10);
 
   let fiveHours;
-  if (hours === 5) {
+  if (hours >= 5) {
     fiveHours = 'ROOO';
   } else {
     fiveHours = 'OOOO';
