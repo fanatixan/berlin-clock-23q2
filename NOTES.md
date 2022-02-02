@@ -74,17 +74,17 @@ Examples:
   | 21:38:15 |    RRRR |
 ```
 
-- 🚧 refactor toBerlinTime function
+- ✅ refactor toBerlinTime function
 
-- UAT 3.1 - 1 Hour
+- 🚧 UAT 3.1 - 1 Hour
 
 ```
 Examples:
   | time     | pattern |
-  | 00:21:40 |    OOOO |
+  | 00:21:40 |    OOOO | ✅
   | 01:55:43 |    ROOO |
   | 02:35:41 |    RROO |
   | 04:29:21 |    RRRR |
-  | 05:32:52 |    0OOO |
+  | 05:32:52 |    OOOO |
   | 06:33:51 |    ROOO |
 ```

@@ -29,6 +29,7 @@ const toBerlinTime = (input) => {
   return {
     seconds: secondsPattern,
     fiveHours: fiveHoursPattern,
+    oneHour: 'OOOO',
   };
 };
 
