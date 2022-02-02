@@ -21,7 +21,7 @@ Examples:
   | 13:00:03 |
 ```
 
-- TODO: UAT1.2 - Even Seconds - light is lit
+- 🚧 UAT1.2 - Even Seconds - light is lit
 
 ```
 Examples:
