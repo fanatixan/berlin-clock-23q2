@@ -3,12 +3,8 @@ const toBerlinTime = (input) => {
   const hours = parseInt(time[0], 10);
   const seconds = parseInt(time[2], 10);
 
-  let fiveHours;
-  if (hours >= 5) {
-    fiveHours = 'ROOO';
-  } else {
-    fiveHours = 'OOOO';
-  }
+  const fiveHourCount = Math.floor(hours / 5);
+  const fiveHours = 'R'.repeat(fiveHourCount) + 'O'.repeat(4 - fiveHourCount);
 
   return {
     seconds: seconds % 2 === 0 ? 'Y' : 'O',
