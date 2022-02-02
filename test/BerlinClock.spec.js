@@ -16,4 +16,14 @@ describe('Berlin Clock', () => {
   `('should have a lit second light for ($input)', ({ input }) => {
     expect(toBerlinTime(input).seconds).toBe('Y');
   });
+
+  test.each`
+    input         | expected
+    ${'00:21:40'} | ${'OOOO'}
+  `(
+    'should have pattern ($expected) for the five hour light for ($input)',
+    ({ input, expected }) => {
+      expect(toBerlinTime(input).fiveHours).toBe(expected);
+    },
+  );
 });
