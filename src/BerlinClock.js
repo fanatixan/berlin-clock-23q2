@@ -29,13 +29,11 @@ const toOneHourPattern = (hours) => {
 };
 
 const toFiveMinutesPattern = (minutes) => {
-  let fiveMinutesPattern = 'OOOOOOOOOOO';
   const fiveMinutes = Math.floor(minutes / 5);
-  if (minutes >= 5) {
-    fiveMinutesPattern = fullFiveMinutesPattern.substring(0, fiveMinutes)
-      + OFF.repeat(11 - fiveMinutes);
-  }
-  return fiveMinutesPattern;
+  return (
+    fullFiveMinutesPattern.substring(0, fiveMinutes)
+    + OFF.repeat(fullFiveMinutesPattern.length - fiveMinutes)
+  );
 };
 
 const parseTime = (timeString) => timeString.split(':').map((segment) => parseInt(segment, 10));
