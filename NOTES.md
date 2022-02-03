@@ -104,7 +104,7 @@ Examples:
   | 02:35:41 |    RROO | ✅
   | 04:29:21 |    RRRR |
   | 05:32:52 |    OOOO |
-  | 06:33:51 |    ROOO |
+  | 06:33:51 |    ROOO | ✅
 ```
 
 - TODO: UAT 4.1 - 5 Minutes
