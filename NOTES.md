@@ -159,8 +159,8 @@ Then the fourth row of lights shows <pattern>
 Examples:
   | time     | pattern     |
   | 00:00:00 | OOOOOOOOOOO | ✅
-  | 07:04:15 | OOOOOOOOOOO | 🚧
-  | 04:05:06 | YOOOOOOOOOO |
+  | 07:04:15 | OOOOOOOOOOO |
+  | 04:05:06 | YOOOOOOOOOO | ✅
   | 11:09:53 | YOOOOOOOOOO |
   | 23:10:24 | YYOOOOOOOOO |
   | 19:14:42 | YYOOOOOOOOO |

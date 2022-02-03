@@ -29,17 +29,22 @@ const toOneHourPattern = (hours) => {
 const parseTime = (timeString) => timeString.split(':').map((segment) => parseInt(segment, 10));
 
 const toBerlinTime = (input) => {
-  const [hours, , seconds] = parseTime(input);
+  const [hours, minutes, seconds] = parseTime(input);
 
   const secondsPattern = toSecondsPattern(seconds);
   const fiveHoursPattern = toFiveHoursPattern(hours);
   const oneHourPattern = toOneHourPattern(hours);
 
+  let fiveMinutesPattern = 'OOOOOOOOOOO';
+  if (minutes >= 5) {
+    fiveMinutesPattern = 'YOOOOOOOOOO';
+  }
+
   return {
     seconds: secondsPattern,
     fiveHours: fiveHoursPattern,
     oneHour: oneHourPattern,
-    fiveMinutes: 'OOOOOOOOOOO',
+    fiveMinutes: fiveMinutesPattern,
   };
 };
 
