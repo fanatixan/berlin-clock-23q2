@@ -36,8 +36,9 @@ const toBerlinTime = (input) => {
   const oneHourPattern = toOneHourPattern(hours);
 
   let fiveMinutesPattern = 'OOOOOOOOOOO';
+  const fiveMinutes = Math.floor(minutes / 5);
   if (minutes >= 5) {
-    fiveMinutesPattern = 'YOOOOOOOOOO';
+    fiveMinutesPattern = YELLOW.repeat(fiveMinutes) + OFF.repeat(11 - fiveMinutes);
   }
 
   return {

@@ -59,6 +59,7 @@ describe('Berlin Clock', () => {
     input         | expected
     ${'00:00:00'} | ${'OOOOOOOOOOO'}
     ${'04:05:06'} | ${'YOOOOOOOOOO'}
+    ${'23:10:24'} | ${'YYOOOOOOOOO'}
   `(
     'should have pattern ($expected) for the five minutes lights for ($input)',
     ({ input, expected }) => {
