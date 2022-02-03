@@ -107,6 +107,8 @@ Examples:
   | 06:33:51 |    ROOO |
 ```
 
+- ✅ Refactor the code for the one hour pattern
+
 - TODO: UAT 4.1 - 5 Minutes
 
 ```

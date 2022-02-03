@@ -3,6 +3,7 @@ const YELLOW = 'Y';
 const OFF = 'O';
 
 const fiveHourLightCount = 4;
+const oneHourLightCount = 4;
 
 const toSecondsPattern = (seconds) => {
   if (seconds % 2 === 0) {
@@ -18,6 +19,13 @@ const toFiveHoursPattern = (hours) => {
   );
 };
 
+const toOneHourPattern = (hours) => {
+  const oneHourPattern = hours % 5;
+  return (
+    RED.repeat(oneHourPattern) + OFF.repeat(oneHourLightCount - oneHourPattern)
+  );
+};
+
 const parseTime = (timeString) => timeString.split(':').map((segment) => parseInt(segment, 10));
 
 const toBerlinTime = (input) => {
@@ -25,14 +33,12 @@ const toBerlinTime = (input) => {
 
   const secondsPattern = toSecondsPattern(seconds);
   const fiveHoursPattern = toFiveHoursPattern(hours);
-
-  const oneHourPattern = hours % 5;
-  const oneHour = RED.repeat(oneHourPattern) + OFF.repeat(4 - oneHourPattern);
+  const oneHourPattern = toOneHourPattern(hours);
 
   return {
     seconds: secondsPattern,
     fiveHours: fiveHoursPattern,
-    oneHour,
+    oneHour: oneHourPattern,
   };
 };
 
