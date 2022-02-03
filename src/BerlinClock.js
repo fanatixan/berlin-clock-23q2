@@ -26,10 +26,15 @@ const toBerlinTime = (input) => {
   const secondsPattern = toSecondsPattern(seconds);
   const fiveHoursPattern = toFiveHoursPattern(hours);
 
+  let oneHour = 'OOOO';
+  if (hours > 0) {
+    oneHour = 'ROOO';
+  }
+
   return {
     seconds: secondsPattern,
     fiveHours: fiveHoursPattern,
-    oneHour: 'OOOO',
+    oneHour,
   };
 };
 
