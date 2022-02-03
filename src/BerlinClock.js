@@ -5,6 +5,8 @@ const OFF = 'O';
 const fiveHourLightCount = 4;
 const oneHourLightCount = 4;
 
+const fullFiveMinutesPattern = 'YYRYYRYYRYY';
+
 const toSecondsPattern = (seconds) => {
   if (seconds % 2 === 0) {
     return YELLOW;
@@ -30,7 +32,8 @@ const toFiveMinutesPattern = (minutes) => {
   let fiveMinutesPattern = 'OOOOOOOOOOO';
   const fiveMinutes = Math.floor(minutes / 5);
   if (minutes >= 5) {
-    fiveMinutesPattern = YELLOW.repeat(fiveMinutes) + OFF.repeat(11 - fiveMinutes);
+    fiveMinutesPattern = fullFiveMinutesPattern.substring(0, fiveMinutes)
+      + OFF.repeat(11 - fiveMinutes);
   }
   return fiveMinutesPattern;
 };
