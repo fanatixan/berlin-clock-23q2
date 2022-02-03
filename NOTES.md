@@ -149,7 +149,7 @@ Examples:
 Driver: Gearóid
 Navigator: Attila
 
-- 🚧 UAT 4.1 - 5 Minutes
+- ✅ UAT 4.1 - 5 Minutes
 
 ```
 Given <time>
@@ -158,13 +158,13 @@ Then the fourth row of lights shows <pattern>
 
 Examples:
   | time     | pattern     |
-  | 00:00:00 | OOOOOOOOOOO | ✅
+  | 00:00:00 | OOOOOOOOOOO |
   | 07:04:15 | OOOOOOOOOOO |
-  | 04:05:06 | YOOOOOOOOOO | ✅
+  | 04:05:06 | YOOOOOOOOOO |
   | 11:09:53 | YOOOOOOOOOO |
-  | 23:10:24 | YYOOOOOOOOO | ✅
+  | 23:10:24 | YYOOOOOOOOO |
   | 19:14:42 | YYOOOOOOOOO |
-  | 16:15:33 | YYROOOOOOOO | ✅
+  | 16:15:33 | YYROOOOOOOO |
   | 18:19:38 | YYROOOOOOOO |
   | 05:20:01 | YYRYOOOOOOO |
   | 03:24:38 | YYRYOOOOOOO |
