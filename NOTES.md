@@ -185,3 +185,4 @@ Examples:
 ```
 
 - ✅ Refactor the code for the five minutes pattern
+- ✅ Refactor the code for pattern generations

@@ -1,11 +1,12 @@
-const RED = 'R';
 const YELLOW = 'Y';
 const OFF = 'O';
 
-const fiveHourLightCount = 4;
-const oneHourLightCount = 4;
+const FULL_FIVE_HOURS_PATTERN = 'RRRR';
+const FULL_ONE_HOUR_PATTERN = 'RRRR';
+const FULL_FIVE_MINUTES_PATTERN = 'YYRYYRYYRYY';
 
-const fullFiveMinutesPattern = 'YYRYYRYYRYY';
+const toPattern = (fullPattern, length) => fullPattern.substring(0, length)
+  + OFF.repeat(fullPattern.length - length);
 
 const toSecondsPattern = (seconds) => {
   if (seconds % 2 === 0) {
@@ -16,24 +17,17 @@ const toSecondsPattern = (seconds) => {
 
 const toFiveHoursPattern = (hours) => {
   const fiveHourCount = Math.floor(hours / 5);
-  return (
-    RED.repeat(fiveHourCount) + OFF.repeat(fiveHourLightCount - fiveHourCount)
-  );
+  return toPattern(FULL_FIVE_HOURS_PATTERN, fiveHourCount);
 };
 
 const toOneHourPattern = (hours) => {
-  const oneHourPattern = hours % 5;
-  return (
-    RED.repeat(oneHourPattern) + OFF.repeat(oneHourLightCount - oneHourPattern)
-  );
+  const oneHourCount = hours % 5;
+  return toPattern(FULL_ONE_HOUR_PATTERN, oneHourCount);
 };
 
 const toFiveMinutesPattern = (minutes) => {
   const fiveMinutes = Math.floor(minutes / 5);
-  return (
-    fullFiveMinutesPattern.substring(0, fiveMinutes)
-    + OFF.repeat(fullFiveMinutesPattern.length - fiveMinutes)
-  );
+  return toPattern(FULL_FIVE_MINUTES_PATTERN, fiveMinutes);
 };
 
 const parseTime = (timeString) => timeString.split(':').map((segment) => parseInt(segment, 10));

@@ -47,9 +47,6 @@
     "*.js": [
       "eslint --fix"
     ],
-    "*.{js,css,md}": [
-      "prettier --write"
-    ],
     "package.json": [
       "npm run typesync --silent",
       "sort-package-json"
