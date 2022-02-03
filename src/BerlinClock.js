@@ -26,6 +26,15 @@ const toOneHourPattern = (hours) => {
   );
 };
 
+const toFiveMinutesPattern = (minutes) => {
+  let fiveMinutesPattern = 'OOOOOOOOOOO';
+  const fiveMinutes = Math.floor(minutes / 5);
+  if (minutes >= 5) {
+    fiveMinutesPattern = YELLOW.repeat(fiveMinutes) + OFF.repeat(11 - fiveMinutes);
+  }
+  return fiveMinutesPattern;
+};
+
 const parseTime = (timeString) => timeString.split(':').map((segment) => parseInt(segment, 10));
 
 const toBerlinTime = (input) => {
@@ -35,11 +44,7 @@ const toBerlinTime = (input) => {
   const fiveHoursPattern = toFiveHoursPattern(hours);
   const oneHourPattern = toOneHourPattern(hours);
 
-  let fiveMinutesPattern = 'OOOOOOOOOOO';
-  const fiveMinutes = Math.floor(minutes / 5);
-  if (minutes >= 5) {
-    fiveMinutesPattern = YELLOW.repeat(fiveMinutes) + OFF.repeat(11 - fiveMinutes);
-  }
+  const fiveMinutesPattern = toFiveMinutesPattern(minutes);
 
   return {
     seconds: secondsPattern,

@@ -183,3 +183,5 @@ Examples:
   | 10:55:31 | YYRYYRYYRYY |
   | 12:59:47 | YYRYYRYYRYY |
 ```
+
+- ✅ Refactor the code for the five minutes pattern
