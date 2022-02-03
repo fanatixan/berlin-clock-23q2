@@ -27,8 +27,8 @@ const toBerlinTime = (input) => {
   const fiveHoursPattern = toFiveHoursPattern(hours);
 
   let oneHour = 'OOOO';
-  if (hours > 0) {
-    oneHour = 'ROOO';
+  if (hours > 0 && hours < 5) {
+    oneHour = RED.repeat(hours) + OFF.repeat(4 - hours);
   }
 
   return {
