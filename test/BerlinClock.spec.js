@@ -45,6 +45,8 @@ describe('Berlin Clock', () => {
     ${'00:21:40'} | ${'OOOO'}
     ${'01:55:43'} | ${'ROOO'}
     ${'02:35:41'} | ${'RROO'}
+    ${'04:29:21'} | ${'RRRR'}
+    ${'05:32:52'} | ${'OOOO'}
     ${'06:33:51'} | ${'ROOO'}
   `(
     'should have pattern ($expected) for the one hour light for ($input)',
