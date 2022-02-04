@@ -22,6 +22,7 @@
     "lint": "eslint --cache --fix",
     "postinstall": "npm run requirements-check",
     "precommit": "lint-staged",
+    "commit": "./scripts/commit.sh",
     "prepare": "husky install",
     "pre-push": "npm-run-all test test:security",
     "requirements-check": "node check_node_version.js",
