@@ -212,3 +212,12 @@ Examples:
 
 - ✅ Refactor: extract logic to separate function
 - ✅ make variable naming consistent in `toXxxPattern` functions
+
+# Next steps
+1. Creating API stories with OpenAPI defs
+1. Make something work locally (for example, healthcheck endpoint)
+1. Make CD pipeline work with contract testing (maybe smoke test, too?)
+1. Complete API
+1. Include Swagger UI deployment in CD
+1. Creating CLI stories
+1. Implementing CLI
