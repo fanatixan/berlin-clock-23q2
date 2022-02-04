@@ -211,3 +211,4 @@ Examples:
 ```
 
 - ✅ Refactor: extract logic to separate function
+- ✅ make variable naming consistent in `toXxxPattern` functions

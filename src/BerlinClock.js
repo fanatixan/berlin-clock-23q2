@@ -27,8 +27,8 @@ const toOneHourPattern = (hours) => {
 };
 
 const toFiveMinutesPattern = (minutes) => {
-  const fiveMinutes = Math.floor(minutes / 5);
-  return toPattern(FULL_FIVE_MINUTES_PATTERN, fiveMinutes);
+  const fiveMinuteCount = Math.floor(minutes / 5);
+  return toPattern(FULL_FIVE_MINUTES_PATTERN, fiveMinuteCount);
 };
 
 const toOneMinutePattern = (minutes) => {
