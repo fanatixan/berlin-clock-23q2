@@ -87,4 +87,15 @@ describe('Berlin Clock', () => {
       expect(toBerlinTime(input).fiveMinutes).toBe(expected);
     },
   );
+
+  test.each`
+    input         | expected
+    ${'00:00:00'} | ${'OOOO'}
+    ${'07:01:15'} | ${'YOOO'}
+  `(
+    'should have pattern ($expected) for the one minute lights for ($input)',
+    ({ input, expected }) => {
+      expect(toBerlinTime(input).oneMinute).toBe(expected);
+    },
+  );
 });

@@ -40,12 +40,14 @@ const toBerlinTime = (input) => {
   const oneHourPattern = toOneHourPattern(hours);
 
   const fiveMinutesPattern = toFiveMinutesPattern(minutes);
+  const oneMinutePattern = toPattern('YYYY', minutes % 5);
 
   return {
     seconds: secondsPattern,
     fiveHours: fiveHoursPattern,
     oneHour: oneHourPattern,
     fiveMinutes: fiveMinutesPattern,
+    oneMinute: oneMinutePattern,
   };
 };
 

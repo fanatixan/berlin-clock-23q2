@@ -186,3 +186,26 @@ Examples:
 
 - ✅ Refactor the code for the five minutes pattern
 - ✅ Refactor the code for pattern generations
+
+# Pomodoro 5
+
+- 🚧 UAT 5.1 - 1 Minute
+
+```
+Given <time>
+When taking a look at the Berlin Clock
+Then the fifth row of lights shows <pattern>
+
+Examples:
+  | time     | pattern |
+  | 00:00:00 |    OOOO | ✅
+  | 07:01:15 |    YOOO | ✅
+  | 04:02:06 |    YYOO |
+  | 11:03:53 |    YYYO |
+  | 23:04:24 |    YYYY |
+  | 19:05:42 |    OOOO |
+  | 16:16:33 |    YOOO |
+  | 18:37:38 |    YYOO |
+  | 05:48:01 |    YYYO |
+  | 03:19:38 |    YYYY |
+```
