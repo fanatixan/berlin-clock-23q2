@@ -4,6 +4,7 @@ const OFF = 'O';
 const FULL_FIVE_HOURS_PATTERN = 'RRRR';
 const FULL_ONE_HOUR_PATTERN = 'RRRR';
 const FULL_FIVE_MINUTES_PATTERN = 'YYRYYRYYRYY';
+const FULL_ONE_MINUTE_PATTERN = 'YYYY';
 
 const toPattern = (fullPattern, length) => fullPattern.substring(0, length)
   + OFF.repeat(fullPattern.length - length);
@@ -30,6 +31,11 @@ const toFiveMinutesPattern = (minutes) => {
   return toPattern(FULL_FIVE_MINUTES_PATTERN, fiveMinutes);
 };
 
+const toOneMinutePattern = (minutes) => {
+  const minuteCount = minutes % 5;
+  return toPattern(FULL_ONE_MINUTE_PATTERN, minuteCount);
+};
+
 const parseTime = (timeString) => timeString.split(':').map((segment) => parseInt(segment, 10));
 
 const toBerlinTime = (input) => {
@@ -40,7 +46,7 @@ const toBerlinTime = (input) => {
   const oneHourPattern = toOneHourPattern(hours);
 
   const fiveMinutesPattern = toFiveMinutesPattern(minutes);
-  const oneMinutePattern = toPattern('YYYY', minutes % 5);
+  const oneMinutePattern = toOneMinutePattern(minutes);
 
   return {
     seconds: secondsPattern,
