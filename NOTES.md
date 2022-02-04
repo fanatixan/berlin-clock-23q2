@@ -189,7 +189,7 @@ Examples:
 
 # Pomodoro 5
 
-- 🚧 UAT 5.1 - 1 Minute
+- ✅ UAT 5.1 - 1 Minute
 
 ```
 Given <time>
@@ -198,8 +198,8 @@ Then the fifth row of lights shows <pattern>
 
 Examples:
   | time     | pattern |
-  | 00:00:00 |    OOOO | ✅
-  | 07:01:15 |    YOOO | ✅
+  | 00:00:00 |    OOOO | 
+  | 07:01:15 |    YOOO | 
   | 04:02:06 |    YYOO |
   | 11:03:53 |    YYYO |
   | 23:04:24 |    YYYY |
@@ -209,3 +209,5 @@ Examples:
   | 05:48:01 |    YYYO |
   | 03:19:38 |    YYYY |
 ```
+
+- Refactor: extract logic to separate function
