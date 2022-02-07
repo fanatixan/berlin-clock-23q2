@@ -15,5 +15,13 @@ describe('Given a time <time>', () => {
       const time = '00:00:00';
       await request(app).get(`/to-berlin-time/${time}`).send().expect(200);
     });
+
+    test('Then I get a JSON object', async () => {
+      const time = '00:00:00';
+      await request(app)
+        .get(`/to-berlin-time/${time}`)
+        .send()
+        .expect('Content-Type', /json/);
+    });
   });
 });

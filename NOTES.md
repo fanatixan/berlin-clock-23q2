@@ -233,3 +233,4 @@ Navigator: Gearóid
 
 - ✅ UAT6.1 - Health route
 - ✅ UAT7.1 - Successful return of Berlin clock time
+- 🚧 UAT7.2 - Correct response is returned

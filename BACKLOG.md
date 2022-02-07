@@ -200,7 +200,7 @@ Examples:
   | 00:00:00 | 
 ```
 
-## UAT7.2 - 
+## UAT7.2 - Correct response is returned
 
 ```
 Given a time <time>
