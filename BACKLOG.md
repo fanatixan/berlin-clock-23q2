@@ -161,3 +161,58 @@ Examples:
   | 05:48:01 |    YYYO |
   | 03:19:38 |    YYYY |
 ```
+
+----
+
+# US6 - Health check endpoint
+
+```
+As a monitor
+I want to check the status of the app
+So that I can ensure that it is online
+```
+
+## UAT6.1 - Health route
+
+```
+Given a running app
+When I call GET /health
+Then I get an HTTP OK
+```
+
+# US7 - Timestamp convertor endpoint
+
+```
+As an API consumer
+I want send a timestamp to the app
+So that I can receive the timestamp in Berlin clock format
+```
+
+## UAT7.1 - Successful return of Berlin clock time
+
+```
+Given a time <time>
+When I to call GET /to-berlin-time/<time>
+Then I get an HTTP OK
+
+Examples:
+  | time     | 
+  | 00:00:00 | 
+```
+
+## UAT7.2 - 
+
+```
+Given a time <time>
+When I to call GET /to-berlin-time/<time>
+Then I get a JSON object 
+And it has a field with name seconds
+And it has a field with name fiveHours
+And it has a field with name oneHour
+And it has a field with name fiveMinutes 
+And it has a field with name oneMinute
+
+Examples:
+  | time     | 
+  | 00:00:00 | 
+```

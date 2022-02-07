@@ -221,3 +221,7 @@ Examples:
 1. Include Swagger UI deployment in CD
 1. Creating CLI stories
 1. Implementing CLI
+
+## Pomdoro 6
+
+- ✅ Creating API stories with OpenAPI defs
