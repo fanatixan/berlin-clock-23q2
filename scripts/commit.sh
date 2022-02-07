@@ -28,7 +28,7 @@ function uatMessage() {
   US="$2"
   UAT="$3"
   MSG="$4"
-  SCOPE="US$US/UAT$US.$UAT"
+  SCOPE="us$US/uat$US.$UAT"
   echo "$TYPE($SCOPE): $MSG"
 }
 

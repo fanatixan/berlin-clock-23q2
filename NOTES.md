@@ -225,3 +225,11 @@ Examples:
 ## Pomdoro 6
 
 - ✅ Creating API stories with OpenAPI defs
+
+## Pomodoro 7
+
+Driver: Julian  
+Navigator: Gearóid  
+
+- ✅ UAT6.1 - Health route
+- TODO: UAT7.1 - Successful return of Berlin clock time
