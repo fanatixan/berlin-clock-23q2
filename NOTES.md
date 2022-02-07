@@ -232,4 +232,4 @@ Driver: Julian
 Navigator: Gearóid  
 
 - ✅ UAT6.1 - Health route
-- TODO: UAT7.1 - Successful return of Berlin clock time
+- ✅ UAT7.1 - Successful return of Berlin clock time

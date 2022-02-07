@@ -192,7 +192,7 @@ So that I can receive the timestamp in Berlin clock format
 
 ```
 Given a time <time>
-When I to call GET /to-berlin-time/<time>
+When I call GET /to-berlin-time/<time>
 Then I get an HTTP OK
 
 Examples:
@@ -204,7 +204,7 @@ Examples:
 
 ```
 Given a time <time>
-When I to call GET /to-berlin-time/<time>
+When I call GET /to-berlin-time/<time>
 Then I get a JSON object 
 And it has a field with name seconds
 And it has a field with name fiveHours
