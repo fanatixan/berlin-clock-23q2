@@ -10,14 +10,13 @@
     "airbnb-base",
     "plugin:jest/recommended",
     "plugin:jest/style",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 12
   },
-  "plugins": ["prettier", "jest-formatting", "jest"],
+  "plugins": ["jest-formatting", "jest"],
   "rules": {
-    "prettier/prettier": ["error"],
     "no-underscore-dangle": 0,
     "no-unused-vars": ["error", { "argsIgnorePattern": "next" }],
     "camelcase": 0,
@@ -28,6 +27,12 @@
     "jest/no-standalone-expect": [
       "error",
       { "additionalTestBlockFunctions": ["Given", "When", "Then"] }
+    ],
+    "jest/expect-expect": [
+      "error",
+      {
+        "assertFunctionNames": ["expect", "request.**.expect"]
+      }
     ]
   }
 }

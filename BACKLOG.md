@@ -206,11 +206,7 @@ Examples:
 Given a time <time>
 When I call GET /to-berlin-time/<time>
 Then I get a JSON object 
-And it has a field with name seconds
-And it has a field with name fiveHours
-And it has a field with name oneHour
-And it has a field with name fiveMinutes 
-And it has a field with name oneMinute
+And it is the same returned by the business logic
 
 Examples:
   | time     | 
