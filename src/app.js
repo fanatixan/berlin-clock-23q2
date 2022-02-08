@@ -8,6 +8,6 @@ app.use(cors());
 
 app.get('/health', (_, response) => response.sendStatus(200));
 
-app.get('/to-berlin-time/:time', (_, response) => response.sendStatus(200));
+app.get('/to-berlin-time/:time', (_, response) => response.json({}));
 
 module.exports = app;
