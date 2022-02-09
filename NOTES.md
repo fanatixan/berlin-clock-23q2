@@ -241,3 +241,12 @@ Driver: Gearóid
 Navigator: Attila
 
 - 🚧 UAT7.2 - Correct response is returned
+
+## Pomodoro 9
+
+Driver: Attila  
+Navigator: Julian
+
+- ✅ Fix npm commit issue
+- 🚧 UAT7.2 - Correct response is returned
+- TODO: Create OpenAPI doc
