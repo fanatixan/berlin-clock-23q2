@@ -249,4 +249,4 @@ Navigator: Julian
 
 - ✅ Fix npm commit issue
 - ✅ UAT7.2 - Correct response is returned
-- TODO: Create OpenAPI doc
+- ✅ Create OpenAPI doc

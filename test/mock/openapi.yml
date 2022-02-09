@@ -1,16 +1,29 @@
 openapi: "3.0.3"
 info:
-  title: Template NodeJS & Express API
-  description: Template NodeJS & Express API for testing.
+  title: Berlin Clock API
+  description: Berlin Clock API to convert a timestamp to the berlin clock format.
   version: 1.0.0
 servers: 
-  - url: http://localhost:9080/api/v1
-  - url: https://template-nodejs-app.wdc1a.ciocloud.nonprod.intranet.ibm.com/api/v1
+  - url: http://localhost:9080/
 paths:
-  /dummy:
+  /health:
     get:
-      summary: Returns a list of users.
-      description: List of users on the system.
+      summary: Healthcheck endpoint.
+      description: Returns HTTP OK if the application is running.
+      responses:
+        200:
+          description: OK
+  /to-berlin-time/{time}:
+    get:
+      summary: Converts the timestamp to the berlin clock format.
+      description: Converts the timestamp to the berlin clock format.
+      parameters:
+        - in: path
+          name: time
+          schema:
+            type: string
+          required: true
+          description: Timestamp to convert in HH:MM:SS format.
       responses:
         200:
           description: OK
@@ -18,3 +31,24 @@ paths:
             application/json:
               schema:
                 type: object
+                properties:
+                  seconds:
+                    type: string
+                    description: Light for the second in the berlin clock.
+                    example: Y
+                  fiveHours:
+                    type: string
+                    description: Lights for the five hours in the berlin clock.
+                    example: OOOO
+                  oneHour:
+                    type: string
+                    description: Lights for the one hour in the berlin clock.
+                    example: OOOO
+                  fiveMinutes:
+                    type: string
+                    description: Lights for the five minues in the berlin clock.
+                    example: OOOOOOOOOOO
+                  oneMinute:
+                    type: string
+                    description: Lights for the one minute in the berlin clock.
+                    example: OOOO
