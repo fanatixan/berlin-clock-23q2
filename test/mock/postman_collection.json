@@ -1,20 +1,20 @@
 {
   "_": {
-    "postman_id": "cc601ee2-0066-438c-955d-a80eadac3dc0"
+    "postman_id": "29bc32ac-19c8-4d74-966a-6d5201c0fde7"
   },
   "item": [
     {
-      "id": "453f607f-ab53-4837-9bfb-461d35d25d20",
-      "name": "Returns a list of users.",
+      "id": "6e5b22a4-9d72-4031-bcf3-743cfaad4071",
+      "name": "Healthcheck endpoint.",
       "request": {
-        "name": "Returns a list of users.",
+        "name": "Healthcheck endpoint.",
         "description": {
-          "content": "List of users on the system.",
+          "content": "Returns HTTP OK if the application is running.",
           "type": "text/plain"
         },
         "url": {
           "path": [
-            "dummy"
+            "health"
           ],
           "host": [
             "{{baseUrl}}"
@@ -27,14 +27,14 @@
       "response": [
         {
           "_": {
-            "postman_previewlanguage": "json"
+            "postman_previewlanguage": "text"
           },
-          "id": "761dbb33-a4d0-4e0a-80d3-80f58e35931b",
+          "id": "a528c550-e2ad-48e7-8eb7-0318fffc349f",
           "name": "OK",
           "originalRequest": {
             "url": {
               "path": [
-                "dummy"
+                "health"
               ],
               "host": [
                 "{{baseUrl}}"
@@ -50,10 +50,10 @@
           "header": [
             {
               "key": "Content-Type",
-              "value": "application/json"
+              "value": "text/plain"
             }
           ],
-          "body": "{}",
+          "body": "",
           "cookie": []
         }
       ],
@@ -61,10 +61,101 @@
         {
           "listen": "test",
           "script": {
-            "id": "f3b54144-2de3-4b46-b3d1-e3d1a6061cdc",
+            "id": "fd04c125-1762-4c0e-9be4-101a5a0aba31",
             "type": "text/javascript",
             "exec": [
-              "// Validate response status code \npm.test(\"[GET]::/dummy - Response status code is 200\", function () {\n    pm.expect(pm.response.code).to.equal(200);\n});\n"
+              "// Validate response status code \npm.test(\"[GET]::/health - Response status code is 200\", function () {\n    pm.expect(pm.response.code).to.equal(200);\n});\n"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "65bddc65-69bd-45c3-a99d-253c53a11849",
+      "name": "Converts the timestamp to the berlin clock format.",
+      "request": {
+        "name": "Converts the timestamp to the berlin clock format.",
+        "description": {
+          "content": "Converts the timestamp to the berlin clock format.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "to-berlin-time",
+            ":time"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "description": {
+                "content": "(Required) Timestamp to convert in HH:MM:SS format.",
+                "type": "text/plain"
+              },
+              "type": "any",
+              "value": "tempor incidi",
+              "key": "time"
+            }
+          ]
+        },
+        "method": "GET"
+      },
+      "response": [
+        {
+          "_": {
+            "postman_previewlanguage": "json"
+          },
+          "id": "27c81fce-42ef-47d2-9ffc-45df43a03001",
+          "name": "OK",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "to-berlin-time",
+                ":time"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "description": {
+                    "content": "(Required) Timestamp to convert in HH:MM:SS format.",
+                    "type": "text/plain"
+                  },
+                  "type": "any",
+                  "value": "tempor incidi",
+                  "key": "time"
+                }
+              ]
+            },
+            "method": "GET",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": "{\n \"seconds\": \"Y\",\n \"fiveHours\": \"OOOO\",\n \"oneHour\": \"OOOO\",\n \"fiveMinutes\": \"OOOOOOOOOOO\",\n \"oneMinute\": \"OOOO\"\n}",
+          "cookie": []
+        }
+      ],
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "41bde03a-09ed-4aa2-bb02-840fab5a5e41",
+            "type": "text/javascript",
+            "exec": [
+              "// Validate response status code \npm.test(\"[GET]::/to-berlin-time/:time - Response status code is 200\", function () {\n    pm.expect(pm.response.code).to.equal(200);\n});\n"
             ]
           }
         }
@@ -75,16 +166,16 @@
   "variable": [
     {
       "type": "string",
-      "value": "http://localhost:9080/api/v1",
+      "value": "http://localhost:9080/",
       "key": "baseUrl"
     }
   ],
   "info": {
-    "_postman_id": "cc601ee2-0066-438c-955d-a80eadac3dc0",
-    "name": "Template NodeJS & Express API",
+    "_postman_id": "29bc32ac-19c8-4d74-966a-6d5201c0fde7",
+    "name": "Berlin Clock API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "description": {
-      "content": "Template NodeJS & Express API for testing.",
+      "content": "Berlin Clock API to convert a timestamp to the berlin clock format.",
       "type": "text/plain"
     }
   }
