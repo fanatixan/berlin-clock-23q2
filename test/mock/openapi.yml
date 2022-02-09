@@ -4,7 +4,7 @@ info:
   description: Berlin Clock API to convert a timestamp to the berlin clock format.
   version: 1.0.0
 servers: 
-  - url: http://localhost:9080/
+  - url: http://localhost:9080
 paths:
   /health:
     get:
@@ -24,6 +24,7 @@ paths:
             type: string
           required: true
           description: Timestamp to convert in HH:MM:SS format.
+          example: 23:45:09
       responses:
         200:
           description: OK

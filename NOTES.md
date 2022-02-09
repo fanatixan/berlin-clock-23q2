@@ -250,3 +250,10 @@ Navigator: Julian
 - ✅ Fix npm commit issue
 - ✅ UAT7.2 - Correct response is returned
 - ✅ Create OpenAPI doc
+
+## Pomodoro 10
+
+Driver: Julian  
+Navigator: Gearoid
+
+- ✅ Create `index.js` file at root of project to start server (http and port: 9080)
