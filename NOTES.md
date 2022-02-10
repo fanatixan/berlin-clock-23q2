@@ -257,3 +257,14 @@ Driver: Julian
 Navigator: Gearoid
 
 - ✅ Create `index.js` file at root of project to start server (http and port: 9080)
+- 🚧 Create shell script to build Docker images and push to the registry
+- TODO: Update travis to run the build and push to the registry script
+
+## Pomodoro 11
+
+- 🚧 Create shell script to build Docker images and push to the registry
+- TODO: Update travis to run the build and push to the registry script
+
+## Pomodoro 12
+
+- ✅ Create shell script to build Docker images and push to the registry

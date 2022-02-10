@@ -1,9 +1,9 @@
 version: '3.4'
 
 services:
-  templatenodejs:
-    image: templatenodejs
-    container_name: template-nodejs
+  berlinclock:
+    image: berlinclock
+    container_name: berlinclock
     build:
       context: .
       dockerfile: ./Dockerfile

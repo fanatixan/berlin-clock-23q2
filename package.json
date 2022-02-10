@@ -20,7 +20,6 @@
     "detect-secrets:exclude": "cross-env-shell docker run --rm -v ${INIT_CWD}:/code ibmcom/detect-secrets:0.13.1.ibm.47.dss scan --update .secrets.baseline --exclude-files",
     "detect-secrets:update-baseline": "cross-env-shell docker run --rm -v ${INIT_CWD}:/code ibmcom/detect-secrets:0.13.1.ibm.47.dss scan --update .secrets.baseline",
     "lint": "eslint --cache --fix",
-    "postinstall": "npm run requirements-check",
     "precommit": "lint-staged",
     "save": "./scripts/save.sh",
     "prepare": "husky install",
