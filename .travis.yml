@@ -7,12 +7,13 @@ addons:
     token:
       secure: "GlWJm4dXf1URX4c9l/7kKJV7kZu/o+nrkCmLnhYhiL5HaapcrP+pc/EiSQZJJIFsSt+hcLSmvIEsvbDextgeVd8T5nWy47uBspNS2F14opC/5Jlxu0lTXYU9yDOKDmYiBTTfqTynBOwvXhWtpnrl6zWVx8a6njWPdJCCZAJqRZmQjARIMFK2WlQK39DfM+mwZv2zOYlnUo/oJK48vfauWpWvN+/fRqm9YCMr8wedMhmWxlAdw0zfkmoThkOXT0+R872ar3CDiRYeDIJ7S52zRFCzdkNBo7Olc7aMRD/k2oEM6NN0hQtWuAzKnk2BTxj+q5Z4yWVpj/oXzfJIL5YhsZSANO63V4tGy0F3DdZJl7XvIkYHMjf4QOb4oCIIegEzYGHMnHpOo4T4AvvK660xsT9JpUYbsUbTDS+zv3bDYE1UHBSFxp2QsUuzkIt0JqmvFb0cGXPVxn41V9XmXhl0YBbtKQq5kgRKXvk28kAYR2HZVTjIQn+hKxd4L0uSJEkY0I9AD0Ojtp2sGgFTKDQJIryIw0Gtw4vmQc7GOaEyyQl0sIpKYppLodkNmgfXg3YvMXTvvA0apuNI/BqLLFqeB3tvW+ASd/KSjp8ayNZS6FTG1I0cel+/W6RVt6vYYLAOpxeRfrBciFGTClxqaysk/6mSEQux/HBcbDiynTu80SY="
 stages:
-- name: Build
+- name: Quality
 - name: Test
+- name: Build
 - name: Monitor
 jobs:
   include:
-  - stage: Build
+  - stage: Quality
     env: step=Snyk vulnerability check
     name: Snyk vulnerability check
     script:
@@ -31,6 +32,11 @@ jobs:
     script:
       - npm test
       - sonar-scanner
+  - stage: Build
+  - env: step=Build and Publish image
+    name: Build and Publish image
+    script:
+      - ./scripts/build-and-publish.sh
   - stage: Monitor
     env: step=Run Snyk Monitor
     name: Run Snyk Monitor
@@ -38,5 +44,7 @@ jobs:
       snyk monitor
 env:
   global:
-    # SYNK TOKEN
-    secure: "LLgpNM9B/5KyXtGLroTiwFNZ4dQbnmfZhwFLlJDaJusnJsfj4tt5hRCr68juGju3byazEhAb3B4ntf1f5WBjeoN5rJ8VXOfNNmUhENh2DknmphZbYLfD09GYQ/l67wStNFiVJG/puWGbHIn0bEW7vjvpaFIX2SYvPc5wwn2NqpyiebL2oSBcd81UA6/Wa6PAOYDSFqjWWxyWqNWup3Do8KnNhHoMKHlLiO85VUYV4Xc0U+XB83YXdIkl1LMAsz2gZw4Z/HfkDgVjjKkWB4XhnOBbMRfoGXdkmK3cNM/AqCJdV8ZunDf+ypRImmMmMFNNv4Bc7pHrTfO+LCSM95k/aVXeoGDyUWUilz0qZtaJdQcND9i9DQ2qSB4siDxDwVw2+IOoRtDYD0a8F9xFZ58ax+64fUykVclVABRB9InBY6j94l0mad+ixo2d685Q7otXmJj5LSVlRoZIuSDoBvriiCdePDOmmt2zq09AZFiTZwdAVAGhGhVwjc89CbrFW6xGatZgbRkBL5V5sui+Zem/aK7uj6elDocfv4/bN8wPMkDPbtyZqtfX0BgzftKgerN6wjpAuyuU0FMygclWDmRlLkFcPOQ+0vXd1nM6thOb6YH4RxWbu9tMN4Lav9k9FCzbQD02gK2nhPsLADdAAZFnDDP+xMh7hu4gr+PhdrRrJnE="
+    # SNYK_TOKEN
+    - secure: "LLgpNM9B/5KyXtGLroTiwFNZ4dQbnmfZhwFLlJDaJusnJsfj4tt5hRCr68juGju3byazEhAb3B4ntf1f5WBjeoN5rJ8VXOfNNmUhENh2DknmphZbYLfD09GYQ/l67wStNFiVJG/puWGbHIn0bEW7vjvpaFIX2SYvPc5wwn2NqpyiebL2oSBcd81UA6/Wa6PAOYDSFqjWWxyWqNWup3Do8KnNhHoMKHlLiO85VUYV4Xc0U+XB83YXdIkl1LMAsz2gZw4Z/HfkDgVjjKkWB4XhnOBbMRfoGXdkmK3cNM/AqCJdV8ZunDf+ypRImmMmMFNNv4Bc7pHrTfO+LCSM95k/aVXeoGDyUWUilz0qZtaJdQcND9i9DQ2qSB4siDxDwVw2+IOoRtDYD0a8F9xFZ58ax+64fUykVclVABRB9InBY6j94l0mad+ixo2d685Q7otXmJj5LSVlRoZIuSDoBvriiCdePDOmmt2zq09AZFiTZwdAVAGhGhVwjc89CbrFW6xGatZgbRkBL5V5sui+Zem/aK7uj6elDocfv4/bN8wPMkDPbtyZqtfX0BgzftKgerN6wjpAuyuU0FMygclWDmRlLkFcPOQ+0vXd1nM6thOb6YH4RxWbu9tMN4Lav9k9FCzbQD02gK2nhPsLADdAAZFnDDP+xMh7hu4gr+PhdrRrJnE="
+    # IBMCLOUD_APIKEY
+    - secure: "TIJoaCHnZq7D/v7gOJQYvNNBdqby9Yji0R0ZWgV/SkMjNYTqEbavvC+GWY/Ax9oFQLE7KzvGICh3W5OL+Cs72mmYkxbsKnf61rzFUTqOfkGIu+kCY68Ts+RBfE4TawJjhLUPdjg/vjKVhHZ0N8pUI5NVqv+S4eRGPzK9hq9hLdA1YotxRDNSWNRr3ZPIOde2KsYIYdEX3JLJHZBgb1DZWLA4/KoYO2pzY4xm6fZYBpgfqma6Ova0S/Bc3cwPnVUtV/yE0eV2fBX4J2Jn6VKX7xcbF6X212wnwtHzpwqYkRN/uOyB95ux9cP7urfXt8CIDA0rcr4SrnfnSctSLMWcJpoRmAV6rYMrrp4MN750Im6AxIkY1jIBDqKeqFobiEYTit8EPEpfGTsFlrGpaIkdmgM4xmpslMcQVZo/jbdr6BrUhYcTQg2xLs45YRf87IUolYUAFFhhH/jCU1NXUWGLAzvM8Jv8uSfSXq2daL+tXKxiXgqtNGvBv1x3uy74bHaQl5a/QpY1H664NbGwv11c5vqt+TOTNQaz4Ba6xX1HkjnyuIYH68hPmRhfX0WuSOFx1eJkdtmnDn5o/77Bk1xNDuWxPWqgWjzhIqptM56fUd4nKdqB5CAyaksdzmN33GxlimN4HQOJ7kphKxzpjD3r2nHJHgkTIjeWbON/t74Xcxw="

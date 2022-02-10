@@ -268,3 +268,4 @@ Navigator: Gearoid
 ## Pomodoro 12
 
 - ✅ Create shell script to build Docker images and push to the registry
+- ✅ Update `travis.yml` to run `build-and-publish.sh` on push to `main` branch
