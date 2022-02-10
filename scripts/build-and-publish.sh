@@ -4,6 +4,12 @@ echo "🛠 Building images"
 docker-compose build --parallel
 echo "✅ Completed building the images"
 
+# IBM Cloud API Setup & Login
+if ! [ -x "$(command -v ibmcloud)" ]; then
+  echo 'IBM Cloud CLI is not installed. Installing...' >&2
+  curl -sL https://ibm.biz/idt-installer | bash
+fi
+
 IBMCLOUD_URL="https://cloud.ibm.com"
 IBMCLOUD_REGION="eu-de"
 IBMCLOUD_RESOURCE_GROUP=default

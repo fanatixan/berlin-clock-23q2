@@ -33,7 +33,7 @@ jobs:
       - npm test
       - sonar-scanner
   - stage: Build
-  - env: step=Build and Publish image
+    env: step=Build and Publish image
     name: Build and Publish image
     script:
       - ./scripts/build-and-publish.sh
