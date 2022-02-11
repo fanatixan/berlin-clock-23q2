@@ -10,7 +10,7 @@ services:
     environment:
       NODE_ENV: production
     ports:
-      - 9080:9080
+      - 80:9080
 
   swagger:
     image: swaggerapi/swagger-ui
@@ -20,4 +20,4 @@ services:
     volumes:
       - ./test/mock/openapi.yml:/definition/openapi.yml
     ports:
-      - 3080:8080
+      - 80:8080

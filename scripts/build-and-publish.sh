@@ -16,6 +16,8 @@ fi
 IBMCLOUD_URL="https://cloud.ibm.com"
 IBMCLOUD_REGION="eu-de"
 IBMCLOUD_RESOURCE_GROUP=default
+IMAGE_URL=de.icr.io
+NAMESPACE=berlin-clock
 
 echo "🔐 Logging into IBMCloud"
 ibmcloud login -a $IBMCLOUD_URL --apikey $IBMCLOUD_APIKEY --no-region
@@ -25,12 +27,12 @@ echo "🔐 Logging into the container registry"
 ibmcloud cr login
 
 echo "🔖 Tagging the Swagger docker image"
-docker tag swaggerapi/swagger-ui:latest de.icr.io/berlinclock/swagger-ui:latest
+docker tag swaggerapi/swagger-ui:latest $IMAGE_URL/$NAMESPACE/swagger-ui:latest
 echo "🔖 Tagging the Berlin Clock docker image"
-docker tag berlinclock:latest de.icr.io/berlinclock/berlinclock:latest
+docker tag berlinclock:latest $IMAGE_URL/$NAMESPACE/berlinclock:latest
 
 echo "⏫ Pushing the Swagger docker image"
-docker push de.icr.io/berlinclock/swagger-ui:latest
+docker push $IMAGE_URL/$NAMESPACE/swagger-ui:latest
 echo "⏫ Pushing the Berlin clock docker image"
-docker push de.icr.io/berlinclock/berlinclock:latest
+docker push $IMAGE_URL/$NAMESPACE/berlinclock:latest
 echo "🏁 Finished publishing the docker images"
