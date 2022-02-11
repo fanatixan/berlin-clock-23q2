@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "⏬ Pulling the latest docker base images"
+docker-compose pull
+
 echo "🛠 Building images"
 docker-compose build --parallel
 echo "✅ Completed building the images"
