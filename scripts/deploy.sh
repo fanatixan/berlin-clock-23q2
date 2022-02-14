@@ -4,6 +4,7 @@
 if ! [ -x "$(command -v ibmcloud)" ]; then
   echo 'IBM Cloud CLI is not installed. Installing...' >&2
   curl -sL https://ibm.biz/idt-installer | bash
+  ibmcloud plugin install code-engine
 fi
 
 IBMCLOUD_URL="https://cloud.ibm.com"
