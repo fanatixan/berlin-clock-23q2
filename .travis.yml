@@ -11,7 +11,6 @@ stages:
 - name: Test
 - name: Build
 - name: Deploy
-- name: Contract Test
 - name: Monitor
 jobs:
   include:
@@ -34,6 +33,12 @@ jobs:
     script:
       - npm test
       - sonar-scanner
+  - env: step=Run contract tests
+    name: Run contract tests
+    before_script: 
+      - npm start &
+    script:
+      - npm run test:api
   - stage: Build
     env: step=Build and Publish image
     name: Build and Publish image
@@ -44,11 +49,6 @@ jobs:
     name: Deploy the images
     script:
       - ./scripts/deploy.sh
-  - stage: Contract Test
-    env: step=Run contract tests
-    name: Run contract tests
-    script:
-      - npm run test:api -- --env-var "baseUrl=$APP_HOST"
   - stage: Monitor
     env: step=Run Snyk Monitor
     name: Run Snyk Monitor
