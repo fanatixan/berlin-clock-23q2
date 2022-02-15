@@ -9,7 +9,7 @@ TODO:
 # Next steps
 1. ✅ Creating API stories with OpenAPI defs
 1. ✅ Make something work locally (for example, healthcheck endpoint)
-1. Make CD pipeline work with contract testing (maybe smoke test, too?)
+1. ✅ Make CD pipeline work with contract testing (maybe smoke test, too?)
 1. ✅ Complete API
 1. ✅ Include Swagger UI deployment in CD
 1. Creating CLI stories
@@ -282,8 +282,10 @@ Navigator: Gearoid
 
 ## Pomodoro 13
 
-- ✅ Finish up the deployment
+- ✅ create `deploy.sh` script to create or update app in Code Engine
+- ✅ create `setup.sh` script that initalises the Code Engine app
 
 ## Pomodoro 14
 
-- Make CD pipeline work with contract testing (maybe smoke test, too?)
+- ✅ Make CD pipeline work with contract testing (maybe smoke test, too?)
+- ✅ refactor the create script to be called setup
