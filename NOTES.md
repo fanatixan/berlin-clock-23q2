@@ -6,6 +6,16 @@
 ❌ ERROR  
 TODO:
 
+# Next steps
+1. ✅ Creating API stories with OpenAPI defs
+1. ✅ Make something work locally (for example, healthcheck endpoint)
+1. Make CD pipeline work with contract testing (maybe smoke test, too?)
+1. ✅ Complete API
+1. ✅ Include Swagger UI deployment in CD
+1. Creating CLI stories
+1. Implementing CLI with E2E BDD tests
+1. Create a frontend
+
 ## Pomodoro 1
 
 Driver: Gearóid  
@@ -269,3 +279,11 @@ Navigator: Gearoid
 
 - ✅ Create shell script to build Docker images and push to the registry
 - ✅ Update `travis.yml` to run `build-and-publish.sh` on push to `main` branch
+
+## Pomodoro 13
+
+- ✅ Finish up the deployment
+
+## Pomodoro 14
+
+- Make CD pipeline work with contract testing (maybe smoke test, too?)

@@ -28,11 +28,17 @@ jobs:
     script:
       - commitlint-travis
   - stage: Test
-    env: step=Run tests and Sonar Scanner
-    name: Run tests and Sonar Scanner
+    env: step=Run unit tests and Sonar Scanner
+    name: Run unit tests and Sonar Scanner
     script:
       - npm test
       - sonar-scanner
+  - env: step=Run contract tests
+    name: Run contract tests
+    before_script: 
+      - npm start
+    scripts:
+      - npm run test:api
   - stage: Build
     env: step=Build and Publish image
     name: Build and Publish image

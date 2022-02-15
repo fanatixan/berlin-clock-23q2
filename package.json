@@ -25,7 +25,7 @@
     "prepare": "husky install",
     "pre-push": "npm-run-all test test:security",
     "requirements-check": "node check_node_version.js",
-    "start": "node src/.js",
+    "start": "npm run start:app",
     "start:app": "node index.js",
     "start:app:dev": "nodemon index.js",
     "start:swagger": "docker run --rm -p 3080:8080 -e SWAGGER_JSON=/definition/openapi.yml -v $(pwd)/test/mock/openapi.yaml:/definition/openapi.yaml swaggerapi/swagger-ui:latest",
