@@ -36,7 +36,7 @@ jobs:
   - env: step=Run contract tests
     name: Run contract tests
     before_script: 
-      - npm start
+      - npm start &
     scripts:
       - npm run test:api
   - stage: Build
