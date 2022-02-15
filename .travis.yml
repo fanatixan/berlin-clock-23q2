@@ -19,7 +19,7 @@ jobs:
     env: step=Snyk vulnerability check
     name: Snyk vulnerability check
     script:
-      snyk test
+      npm run test:security
   - env: step=Detect secrets in files
     name: Detect secrets in files
     script:
