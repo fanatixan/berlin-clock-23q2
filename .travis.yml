@@ -47,7 +47,7 @@ jobs:
   - stage: Contract Test
     env: step=Run contract tests
     name: Run contract tests
-    scripts:
+    script:
       - npm run test:api -- --env-var "baseUrl=$APP_HOST"
   - stage: Monitor
     env: step=Run Snyk Monitor
