@@ -212,3 +212,22 @@ Examples:
   | time     | 
   | 00:00:00 | 
 ```
+
+# US8 - CLI
+
+```
+As a terminal user
+I want to convert a timestamp to Berlin Clock format with a CLI interface
+So that I get a visual representation of the time
+```
+
+## UAT8.1 - Running the CLI
+```
+Given <time>
+When I pass it to the CLI as argument
+Then <pattern> is printed
+
+Examples:
+  | time     | pattern                                                         |
+  | 12:34:56 | 🟡\n🔴🔴⚪⚪\n🔴🔴⚪⚪\n🟡🟡🔴🟡🟡🔴⚪⚪⚪⚪⚪\n🟡🟡🟡🟡 |
+```

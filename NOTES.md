@@ -289,3 +289,11 @@ Navigator: Gearoid
 
 - ✅ Make CD pipeline work with contract testing (maybe smoke test, too?)
 - ✅ refactor the create script to be called setup
+
+# Pomodoro 15
+
+Driver: Julian
+Navigator: Attila
+
+- ✅ Creating CLI stories
+- ✅ Check BDD environment
