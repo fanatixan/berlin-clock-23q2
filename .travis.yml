@@ -11,6 +11,7 @@ stages:
 - name: Test
 - name: Build
 - name: Deploy
+- name: Smoke Test
 - name: Monitor
 jobs:
   include:
@@ -49,6 +50,11 @@ jobs:
     name: Deploy the images
     script:
       - ./scripts/deploy.sh
+  - stage: Smoke Test	
+    env: step=Run contract tests	
+    name: Run contract tests	
+    script:	
+      - npm run test:api -- --env-var "baseUrl=$APP_HOST"
   - stage: Monitor
     env: step=Run Snyk Monitor
     name: Run Snyk Monitor
