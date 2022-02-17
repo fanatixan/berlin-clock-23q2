@@ -11,6 +11,7 @@ describe('Given a running app', () => {
     });
   });
 });
+
 describe('Given a time <time>', () => {
   describe('When I call GET /to-berlin-time/<time>', () => {
     test('Then I get an HTTP OK', async () => {

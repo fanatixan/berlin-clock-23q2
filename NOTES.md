@@ -323,6 +323,6 @@ Navigator: Julian
 Driver: Julian
 Navigator: Attila
 
-- 🚧 implement UAT 8.1
+- ✅ implement UAT 8.1
   - ✅ unit tests for a row of lights
-  - TODO: unit tests for the whole clock
+  - ✅ unit tests for the whole clock
