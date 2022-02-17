@@ -1,3 +1,5 @@
 const cli = () => {};
 
-module.exports = cli;
+const toEmoji = () => '🔴';
+
+module.exports = { cli, toEmoji };

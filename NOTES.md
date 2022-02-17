@@ -297,3 +297,19 @@ Navigator: Attila
 
 - ✅ Creating CLI stories
 - ✅ Check BDD environment
+
+
+## Pomdmoro 16
+
+Driver: Attila
+Navigator: Gearóid
+
+- 🚧 implement UAT 8.1
+
+## Pomodoro 17
+
+- 🚧 implement UAT 8.1
+  - 🚧 unit tests for converting:
+    - 🚧 `"R"` =  🔴
+    - `"Y"` =  🟡
+    - `"O"` =  ⚪
