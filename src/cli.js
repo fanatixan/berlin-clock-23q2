@@ -6,8 +6,10 @@ const COLORS = {
 
 const cli = () => {};
 
+const rowToEmoji = () => '🔴';
+
 const lightToEmoji = (color) => {
   return COLORS[color];
 };
 
-module.exports = { cli, lightToEmoji };
+module.exports = { cli, rowToEmoji, lightToEmoji };

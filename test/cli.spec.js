@@ -1,4 +1,4 @@
-const { lightToEmoji } = require('../src/cli');
+const { lightToEmoji, rowToEmoji } = require('../src/cli');
 
 describe('Given a CLI interface', () => {
   describe('When having a red light', () => {
@@ -17,5 +17,17 @@ describe('Given a CLI interface', () => {
     test('Then ⚪ is printed to the console', () => {
       expect(lightToEmoji('O')).toBe('⚪');
     });
+  });
+
+  describe('When having a row of lights', () => {
+    test.each`
+      input  | expected
+      ${'R'} | ${'🔴'}
+    `(
+      'Then each light of $input is converted to emojis $expected',
+      ({ input, expected }) => {
+        expect(rowToEmoji(input)).toBe(expected);
+      },
+    );
   });
 });

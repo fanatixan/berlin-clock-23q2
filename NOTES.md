@@ -313,3 +313,4 @@ Navigator: Gearóid
     - ✅ `"R"` =  🔴
     - ✅ `"Y"` =  🟡
     - ✅ `"O"` =  ⚪
+  - 🚧 unit tests for a row of lights
