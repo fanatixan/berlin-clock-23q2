@@ -6,8 +6,8 @@ const COLORS = {
 
 const cli = () => {};
 
-const toEmoji = (color) => {
+const lightToEmoji = (color) => {
   return COLORS[color];
 };
 
-module.exports = { cli, toEmoji };
+module.exports = { cli, lightToEmoji };
