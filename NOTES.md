@@ -311,5 +311,5 @@ Navigator: Gearóid
 - 🚧 implement UAT 8.1
   - 🚧 unit tests for converting:
     - ✅ `"R"` =  🔴
-    - `"Y"` =  🟡
+    - ✅ `"Y"` =  🟡
     - `"O"` =  ⚪

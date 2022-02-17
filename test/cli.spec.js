@@ -6,4 +6,10 @@ describe('Given a CLI interface', () => {
       expect(toEmoji('R')).toBe('🔴');
     });
   });
+
+  describe('When having a yellow light', () => {
+    test('Then 🟡 is printed to the console', () => {
+      expect(toEmoji('Y')).toBe('🟡');
+    });
+  });
 });
