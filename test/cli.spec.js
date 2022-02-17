@@ -25,6 +25,7 @@ describe('Given a CLI interface', () => {
       ${'R'}    | ${'🔴'}
       ${'Y'}    | ${'🟡'}
       ${'RROO'} | ${'🔴🔴⚪⚪'}
+      ${'YYYO'} | ${'🟡🟡🟡⚪'}
     `(
       'Then each light of $input is converted to emojis $expected',
       ({ input, expected }) => {
