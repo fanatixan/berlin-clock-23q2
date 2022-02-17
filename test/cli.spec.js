@@ -21,9 +21,10 @@ describe('Given a CLI interface', () => {
 
   describe('When having a row of lights', () => {
     test.each`
-      input  | expected
-      ${'R'} | ${'🔴'}
-      ${'Y'} | ${'🟡'}
+      input     | expected
+      ${'R'}    | ${'🔴'}
+      ${'Y'}    | ${'🟡'}
+      ${'RROO'} | ${'🔴🔴⚪⚪'}
     `(
       'Then each light of $input is converted to emojis $expected',
       ({ input, expected }) => {

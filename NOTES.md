@@ -308,9 +308,21 @@ Navigator: Gearóid
 
 ## Pomodoro 17
 
+Driver: Attila
+Navigator: Julian
+
 - 🚧 implement UAT 8.1
   - ✅ unit tests for converting:
     - ✅ `"R"` =  🔴
     - ✅ `"Y"` =  🟡
     - ✅ `"O"` =  ⚪
   - 🚧 unit tests for a row of lights
+
+## Pomodoro 18
+
+Driver: Julian
+Navigator: Attila
+
+- 🚧 implement UAT 8.1
+  - 🚧 unit tests for a row of lights
+  - TODO: unit tests for the whole clock
