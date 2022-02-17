@@ -1,6 +1,7 @@
 const COLORS = {
   R: '🔴',
   Y: '🟡',
+  O: '⚪',
 };
 
 const cli = () => {};

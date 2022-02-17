@@ -12,4 +12,10 @@ describe('Given a CLI interface', () => {
       expect(toEmoji('Y')).toBe('🟡');
     });
   });
+
+  describe('When having an off light', () => {
+    test('Then ⚪ is printed to the console', () => {
+      expect(toEmoji('O')).toBe('⚪');
+    });
+  });
 });

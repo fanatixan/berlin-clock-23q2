@@ -309,7 +309,7 @@ Navigator: Gearóid
 ## Pomodoro 17
 
 - 🚧 implement UAT 8.1
-  - 🚧 unit tests for converting:
+  - ✅ unit tests for converting:
     - ✅ `"R"` =  🔴
     - ✅ `"Y"` =  🟡
-    - `"O"` =  ⚪
+    - ✅ `"O"` =  ⚪
