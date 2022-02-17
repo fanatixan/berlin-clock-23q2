@@ -310,6 +310,6 @@ Navigator: Gearóid
 
 - 🚧 implement UAT 8.1
   - 🚧 unit tests for converting:
-    - 🚧 `"R"` =  🔴
+    - ✅ `"R"` =  🔴
     - `"Y"` =  🟡
     - `"O"` =  ⚪
