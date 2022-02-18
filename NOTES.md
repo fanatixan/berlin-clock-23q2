@@ -332,5 +332,6 @@ Navigator: Attila
 Driver: Attila
 Navigator: Gearóid
 
-- 🚧 implement UAT 8.1 - end to end
+- ✅ implement UAT 8.1 - end to end
  - ✅ rename the src/cli.js and test/cli.spect.js to use cliConverter
+ 
