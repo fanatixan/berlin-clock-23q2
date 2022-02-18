@@ -1,7 +1,7 @@
 jest.mock('../src/BerlinClock');
 
 const toBerlinTime = require('../src/BerlinClock');
-const { cli, lightToEmoji, rowToEmoji } = require('../src/cli');
+const { cli, lightToEmoji, rowToEmoji } = require('../src/cli-converter');
 
 describe('Given a CLI interface', () => {
   describe('When having a red light', () => {

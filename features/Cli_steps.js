@@ -6,7 +6,7 @@ const {
   // eslint-disable-next-line import/no-extraneous-dependencies
 } = require('jest-cucumber-fusion');
 
-const { cli: bcCli } = require('../src/cli');
+const { cli: bcCli } = require('../src/cli-converter');
 
 let timestamp;
 let pattern;

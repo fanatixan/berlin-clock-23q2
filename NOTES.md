@@ -12,8 +12,8 @@ TODO:
 1. ✅ Make CD pipeline work with contract testing (maybe smoke test, too?)
 1. ✅ Complete API
 1. ✅ Include Swagger UI deployment in CD
-1. Creating CLI stories
-1. Implementing CLI with E2E BDD tests
+1. ✅ Creating CLI stories
+1. 🚧 Implementing CLI with E2E BDD tests
 1. Create a frontend
 
 ## Pomodoro 1
@@ -326,3 +326,11 @@ Navigator: Attila
 - ✅ implement UAT 8.1
   - ✅ unit tests for a row of lights
   - ✅ unit tests for the whole clock
+
+## Pomodoro 19
+
+Driver: Attila
+Navigator: Gearóid
+
+- 🚧 implement UAT 8.1 - end to end
+ - ✅ rename the src/cli.js and test/cli.spect.js to use cliConverter
