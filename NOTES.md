@@ -13,8 +13,15 @@ TODO:
 1. ✅ Complete API
 1. ✅ Include Swagger UI deployment in CD
 1. ✅ Creating CLI stories
-1. 🚧 Implementing CLI with E2E BDD tests
-1. Create a frontend
+1. ✅ Implementing CLI with E2E BDD tests
+1. 🚧 Create a frontend
+  - static HTML page with low-level UI code included - this JS is untested
+    - updateLight(row, pattern) - HTML manipulation
+    - click event handler
+  - table-based layout for the lights
+  - textbox and button to invoke API
+  - UI logic with mocked low-level functions - unit tested
+    - fetch, processing response, calling mocked updateLights()
 
 ## Pomodoro 1
 
@@ -334,4 +341,12 @@ Navigator: Gearóid
 
 - ✅ implement UAT 8.1 - end to end
  - ✅ rename the src/cli.js and test/cli.spect.js to use cliConverter
+
+ ## Pomodoro 20
  
+ Mob
+ Driver: Attila
+
+ - ✅ discuss how the frontend should look like
+ - ✅ implement the HTML structure
+ - ✅ configure express to serve status content

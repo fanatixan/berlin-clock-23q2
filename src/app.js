@@ -6,6 +6,7 @@ const toBerlinTime = require('./BerlinClock');
 const app = express();
 app.use(helmet());
 app.use(cors());
+app.use(express.static('static'));
 
 app.get('/health', (_, response) => response.sendStatus(200));
 
