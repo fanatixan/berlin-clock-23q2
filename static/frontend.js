@@ -1,3 +1,4 @@
 module.exports = () => {
-  global.getTime();
+  const time = global.getTime();
+  global.fetch(`/to-berlin-time/${time}`);
 };
