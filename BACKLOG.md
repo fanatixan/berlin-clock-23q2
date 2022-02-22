@@ -231,3 +231,20 @@ Examples:
   | time     | pattern                                                         |
   | 12:34:56 | 🟡\n🔴🔴⚪⚪\n🔴🔴⚪⚪\n🟡🟡🔴🟡🟡🔴⚪⚪⚪⚪⚪\n🟡🟡🟡🟡 |
 ```
+
+
+# US9 - Frontend
+
+```
+As a browser user
+I want to convert a timestamp to Berlin Clock format with a web application
+So that I get a visual representation of the time
+```
+
+## UAT9.1 - 
+
+```
+Given a timestamp in the text field
+When I click the button
+Then I see the representation of the time
+```
