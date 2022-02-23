@@ -1,4 +1,6 @@
-module.exports = () => {
+module.exports = async () => {
   const time = global.getTime();
-  global.fetch(`/to-berlin-time/${time}`);
+  const { body: berlinTime } = await global.fetch(`/to-berlin-time/${time}`);
+
+  global.showSeconds(berlinTime.seconds);
 };
