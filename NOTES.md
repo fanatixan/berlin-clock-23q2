@@ -7,6 +7,7 @@
 TODO:
 
 # Next steps
+
 1. ✅ Creating API stories with OpenAPI defs
 1. ✅ Make something work locally (for example, healthcheck endpoint)
 1. ✅ Make CD pipeline work with contract testing (maybe smoke test, too?)
@@ -15,13 +16,14 @@ TODO:
 1. ✅ Creating CLI stories
 1. ✅ Implementing CLI with E2E BDD tests
 1. 🚧 Create a frontend
-  - static HTML page with low-level UI code included - this JS is untested
-    - updateLight(row, pattern) - HTML manipulation
-    - click event handler
-  - table-based layout for the lights
-  - textbox and button to invoke API
-  - UI logic with mocked low-level functions - unit tested
-    - fetch, processing response, calling mocked updateLights()
+
+- static HTML page with low-level UI code included - this JS is untested
+  - updateLight(row, pattern) - HTML manipulation
+  - click event handler
+- table-based layout for the lights
+- textbox and button to invoke API
+- UI logic with mocked low-level functions - unit tested
+  - fetch, processing response, calling mocked updateLights()
 
 ## Pomodoro 1
 
@@ -215,8 +217,8 @@ Then the fifth row of lights shows <pattern>
 
 Examples:
   | time     | pattern |
-  | 00:00:00 |    OOOO | 
-  | 07:01:15 |    YOOO | 
+  | 00:00:00 |    OOOO |
+  | 07:01:15 |    YOOO |
   | 04:02:06 |    YYOO |
   | 11:03:53 |    YYYO |
   | 23:04:24 |    YYYY |
@@ -231,6 +233,7 @@ Examples:
 - ✅ make variable naming consistent in `toXxxPattern` functions
 
 # Next steps
+
 1. Creating API stories with OpenAPI defs
 1. Make something work locally (for example, healthcheck endpoint)
 1. Make CD pipeline work with contract testing (maybe smoke test, too?)
@@ -246,7 +249,7 @@ Examples:
 ## Pomodoro 7
 
 Driver: Julian  
-Navigator: Gearóid  
+Navigator: Gearóid
 
 - ✅ UAT6.1 - Health route
 - ✅ UAT7.1 - Successful return of Berlin clock time
@@ -305,7 +308,6 @@ Navigator: Attila
 - ✅ Creating CLI stories
 - ✅ Check BDD environment
 
-
 ## Pomdmoro 16
 
 Driver: Attila
@@ -320,9 +322,9 @@ Navigator: Julian
 
 - 🚧 implement UAT 8.1
   - ✅ unit tests for converting:
-    - ✅ `"R"` =  🔴
-    - ✅ `"Y"` =  🟡
-    - ✅ `"O"` =  ⚪
+    - ✅ `"R"` = 🔴
+    - ✅ `"Y"` = 🟡
+    - ✅ `"O"` = ⚪
   - 🚧 unit tests for a row of lights
 
 ## Pomodoro 18
@@ -340,18 +342,25 @@ Driver: Attila
 Navigator: Gearóid
 
 - ✅ implement UAT 8.1 - end to end
- - ✅ rename the src/cli.js and test/cli.spect.js to use cliConverter
+- ✅ rename the src/cli.js and test/cli.spect.js to use cliConverter
 
- ## Pomodoro 20
- 
- Mob
- Driver: Attila
+## Pomodoro 20
 
- - ✅ discuss how the frontend should look like
- - ✅ implement the HTML structure
- - ✅ configure express to serve status content
+Mob
+Driver: Attila
+
+- ✅ discuss how the frontend should look like
+- ✅ implement the HTML structure
+- ✅ configure express to serve status content
 
 ## Pomdooro 21
+
+Driver: Attila
+Navigator: Gearóid
+
+- 🚧 UAT 9.1
+
+## Pomdooro 22
 
 Driver: Attila
 Navigator: Gearóid

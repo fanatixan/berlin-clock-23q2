@@ -1,6 +1,10 @@
 global.getTime = jest.fn();
 global.fetch = jest.fn();
 global.showSeconds = jest.fn();
+global.showFiveHours = jest.fn();
+global.showOneHour = jest.fn();
+global.showFiveMinutes = jest.fn();
+global.showOneMinute = jest.fn();
 
 const berlinize = require('../static/frontend');
 
@@ -43,6 +47,9 @@ describe('Given a timestamp in the text field', () => {
       await berlinize();
       expect(global.showSeconds).toHaveBeenCalledWith('Y');
       expect(global.showFiveHours).toHaveBeenCalledWith('ROOO');
+      expect(global.showOneHour).toHaveBeenCalledWith('OOOO');
+      expect(global.showFiveMinutes).toHaveBeenCalledWith('YYROOOOOOOO');
+      expect(global.showOneMinute).toHaveBeenCalledWith('YYOO');
     });
   });
 });
