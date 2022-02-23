@@ -4,21 +4,28 @@ global.showSeconds = jest.fn();
 
 const berlinize = require('../static/frontend');
 
+const berlinTime = jest.fn();
+
 describe('Given a timestamp in the text field', () => {
   beforeEach(() => {
     global.getTime.mockReturnValue('12:34:56');
-    global.fetch = jest.fn().mockResolvedValue({
-      body: {
-        seconds: 'Y',
-        fiveHours: 'ROOO',
-        oneHour: 'OOOO',
-        fiveMinutes: 'YYROOOOOOOO',
-        oneMinute: 'YYOO',
-      },
+    berlinTime.mockResolvedValue({
+      seconds: 'Y',
+      fiveHours: 'ROOO',
+      oneHour: 'OOOO',
+      fiveMinutes: 'YYROOOOOOOO',
+      oneMinute: 'YYOO',
+    });
+
+    global.fetch.mockResolvedValue({
+      json: berlinTime,
     });
   });
 
-  afterAll(() => global.fetch.mockRestore());
+  afterAll(() => {
+    global.fetch.mockRestore();
+    berlinTime.mockRestore();
+  });
 
   describe('When I click the button', () => {
     test('Then the timestamp is read from the text field', async () => {
@@ -29,11 +36,13 @@ describe('Given a timestamp in the text field', () => {
     test('Then the berlin time is fetched from the API', async () => {
       await berlinize();
       expect(global.fetch).toHaveBeenCalledWith('/to-berlin-time/12:34:56');
+      expect(berlinTime).toHaveBeenCalled();
     });
 
     test('Then the berlin time is presented in the UI', async () => {
       await berlinize();
       expect(global.showSeconds).toHaveBeenCalledWith('Y');
+      expect(global.showFiveHours).toHaveBeenCalledWith('ROOO');
     });
   });
 });
