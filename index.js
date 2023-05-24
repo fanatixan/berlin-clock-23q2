@@ -1,7 +1,9 @@
 const app = require('./src/app');
 
-const port = 9080;
+const port = process.env.SERVER_PORT;
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`App listening on port: ${port}`);
 });
+
+module.exports = server;
