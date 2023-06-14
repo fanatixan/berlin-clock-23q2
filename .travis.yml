@@ -3,66 +3,44 @@ services:
   - docker
 addons:
   sonarcloud:
-    organization: "gotreasa" # the key of the org you chose at step #3
+    organization: 'gotreasa' # the key of the org you chose at step #3
     token:
-      secure: "GlWJm4dXf1URX4c9l/7kKJV7kZu/o+nrkCmLnhYhiL5HaapcrP+pc/EiSQZJJIFsSt+hcLSmvIEsvbDextgeVd8T5nWy47uBspNS2F14opC/5Jlxu0lTXYU9yDOKDmYiBTTfqTynBOwvXhWtpnrl6zWVx8a6njWPdJCCZAJqRZmQjARIMFK2WlQK39DfM+mwZv2zOYlnUo/oJK48vfauWpWvN+/fRqm9YCMr8wedMhmWxlAdw0zfkmoThkOXT0+R872ar3CDiRYeDIJ7S52zRFCzdkNBo7Olc7aMRD/k2oEM6NN0hQtWuAzKnk2BTxj+q5Z4yWVpj/oXzfJIL5YhsZSANO63V4tGy0F3DdZJl7XvIkYHMjf4QOb4oCIIegEzYGHMnHpOo4T4AvvK660xsT9JpUYbsUbTDS+zv3bDYE1UHBSFxp2QsUuzkIt0JqmvFb0cGXPVxn41V9XmXhl0YBbtKQq5kgRKXvk28kAYR2HZVTjIQn+hKxd4L0uSJEkY0I9AD0Ojtp2sGgFTKDQJIryIw0Gtw4vmQc7GOaEyyQl0sIpKYppLodkNmgfXg3YvMXTvvA0apuNI/BqLLFqeB3tvW+ASd/KSjp8ayNZS6FTG1I0cel+/W6RVt6vYYLAOpxeRfrBciFGTClxqaysk/6mSEQux/HBcbDiynTu80SY="
+      secure: 'GlWJm4dXf1URX4c9l/7kKJV7kZu/o+nrkCmLnhYhiL5HaapcrP+pc/EiSQZJJIFsSt+hcLSmvIEsvbDextgeVd8T5nWy47uBspNS2F14opC/5Jlxu0lTXYU9yDOKDmYiBTTfqTynBOwvXhWtpnrl6zWVx8a6njWPdJCCZAJqRZmQjARIMFK2WlQK39DfM+mwZv2zOYlnUo/oJK48vfauWpWvN+/fRqm9YCMr8wedMhmWxlAdw0zfkmoThkOXT0+R872ar3CDiRYeDIJ7S52zRFCzdkNBo7Olc7aMRD/k2oEM6NN0hQtWuAzKnk2BTxj+q5Z4yWVpj/oXzfJIL5YhsZSANO63V4tGy0F3DdZJl7XvIkYHMjf4QOb4oCIIegEzYGHMnHpOo4T4AvvK660xsT9JpUYbsUbTDS+zv3bDYE1UHBSFxp2QsUuzkIt0JqmvFb0cGXPVxn41V9XmXhl0YBbtKQq5kgRKXvk28kAYR2HZVTjIQn+hKxd4L0uSJEkY0I9AD0Ojtp2sGgFTKDQJIryIw0Gtw4vmQc7GOaEyyQl0sIpKYppLodkNmgfXg3YvMXTvvA0apuNI/BqLLFqeB3tvW+ASd/KSjp8ayNZS6FTG1I0cel+/W6RVt6vYYLAOpxeRfrBciFGTClxqaysk/6mSEQux/HBcbDiynTu80SY='
 stages:
-- name: Quality
-- name: Test
-- name: Build
-- name: Deploy
-- name: Smoke Test
-- name: Monitor
+  - name: Quality
+  - name: Test
+  - name: Monitor
 jobs:
   include:
-  - stage: Quality
-    env: step=Snyk vulnerability check
-    name: Snyk vulnerability check
-    script:
-      npm run test:security
-  - env: step=Detect secrets in files
-    name: Detect secrets in files
-    script:
-      - npm run detect-secrets $(git --no-pager diff --cached --name-only)
-  - env: step=Run commit lint
-    name: Run commit lint
-    script:
-      - commitlint-travis
-  - stage: Test
-    env: step=Run unit tests and Sonar Scanner
-    name: Run unit tests and Sonar Scanner
-    script:
-      - npm test
-      - sonar-scanner
-  - env: step=Run contract tests
-    name: Run contract tests
-    before_script: 
-      - npm start &
-    script:
-      - npm run test:api
-  - stage: Build
-    env: step=Build and Publish image
-    name: Build and Publish image
-    script:
-      - ./scripts/build-and-publish.sh
-  - stage: Deploy
-    env: step=Deploy the images
-    name: Deploy the images
-    script:
-      - ./scripts/deploy.sh
-  - stage: Smoke Test	
-    env: step=Run contract tests	
-    name: Run contract tests	
-    script:	
-      - npm run test:api -- --env-var "baseUrl=$APP_HOST"
-  - stage: Monitor
-    env: step=Run Snyk Monitor
-    name: Run Snyk Monitor
-    script:
-      snyk monitor
+    - stage: Quality
+      env: step=Snyk vulnerability check
+      name: Snyk vulnerability check
+      script: npm run test:security
+    - env: step=Detect secrets in files
+      name: Detect secrets in files
+      script:
+        - npm run detect-secrets $(git --no-pager diff --cached --name-only)
+    - env: step=Run commit lint
+      name: Run commit lint
+      script:
+        - commitlint-travis
+    - stage: Test
+      env: step=Run unit tests and Sonar Scanner
+      name: Run unit tests and Sonar Scanner
+      script:
+        - npm test
+        - sonar-scanner
+    - env: step=Run contract tests
+      name: Run contract tests
+      before_script:
+        - npm start &
+      script:
+        - npm run test:api
+    - stage: Monitor
+      env: step=Run Snyk Monitor
+      name: Run Snyk Monitor
+      script: snyk monitor
 env:
   global:
     # SNYK_TOKEN
-    - secure: "LLgpNM9B/5KyXtGLroTiwFNZ4dQbnmfZhwFLlJDaJusnJsfj4tt5hRCr68juGju3byazEhAb3B4ntf1f5WBjeoN5rJ8VXOfNNmUhENh2DknmphZbYLfD09GYQ/l67wStNFiVJG/puWGbHIn0bEW7vjvpaFIX2SYvPc5wwn2NqpyiebL2oSBcd81UA6/Wa6PAOYDSFqjWWxyWqNWup3Do8KnNhHoMKHlLiO85VUYV4Xc0U+XB83YXdIkl1LMAsz2gZw4Z/HfkDgVjjKkWB4XhnOBbMRfoGXdkmK3cNM/AqCJdV8ZunDf+ypRImmMmMFNNv4Bc7pHrTfO+LCSM95k/aVXeoGDyUWUilz0qZtaJdQcND9i9DQ2qSB4siDxDwVw2+IOoRtDYD0a8F9xFZ58ax+64fUykVclVABRB9InBY6j94l0mad+ixo2d685Q7otXmJj5LSVlRoZIuSDoBvriiCdePDOmmt2zq09AZFiTZwdAVAGhGhVwjc89CbrFW6xGatZgbRkBL5V5sui+Zem/aK7uj6elDocfv4/bN8wPMkDPbtyZqtfX0BgzftKgerN6wjpAuyuU0FMygclWDmRlLkFcPOQ+0vXd1nM6thOb6YH4RxWbu9tMN4Lav9k9FCzbQD02gK2nhPsLADdAAZFnDDP+xMh7hu4gr+PhdrRrJnE="
-    # IBMCLOUD_APIKEY
-    - secure: "xjKZwwhVkc58rxFd4ekNMMpzXL0mnrH5nM0DLbpLighppNB1BYM+V1DPJ5v6GVLmWae8gkLEEkJ3OlGnfjxrF65XMWtp10QRvLzFoUKg5wzrRw4C+4gb814XHvUKnYGW1nZmrc3QmnIa3uZHC9e5mp+VxqYCquSEzdCNuQnUGjsyusp9hp7TF6fR/pHcq8rGdNvwfXfO87qLkoLKETBGNvu1FQIHQU30cnnEcogD0lfYjKcoUnF6jwEI2kw7OZMY1XxT9+CIGIldiqtj0ol/Wop+a0kuO7Yct2kL2VgpOkqtbYYdgh/z8zD1CEl9A7u8Fr8PVDkJU1EiMHPTz7y6VN2/+1/a/t5DqV+uKH95/Kk7Q/Kvs/D5nxogD75dLTEJ4Kqc2fMZL1H70ZMonbBYsdhodZTYsOa0E64vut239aWaQ9eUo3OmzJAlQxlce9Zjp7rUKSspvQoS/1hX2ldfeX4/pVfm6xkaOhU+dMovll5qAioVr/U9wOidDcGOOw7oIuQIkf7hlNZ+YKowEcQAFs2iHzxtkAXHVOkO/4T7BlKvO7A7gsxqiqvd8IPmCyFpNUt2CNK2ZP5ZRVEvF8MS/+SaDzrEvdEd6ZaUfvSA/tyZQUxd6/VMLTKv8Dt3kaYNJ875D+0v5VEyOKPdg7Yyu9d0bMkCy06ZqE6BovnHXdY="
+    - secure: 'LLgpNM9B/5KyXtGLroTiwFNZ4dQbnmfZhwFLlJDaJusnJsfj4tt5hRCr68juGju3byazEhAb3B4ntf1f5WBjeoN5rJ8VXOfNNmUhENh2DknmphZbYLfD09GYQ/l67wStNFiVJG/puWGbHIn0bEW7vjvpaFIX2SYvPc5wwn2NqpyiebL2oSBcd81UA6/Wa6PAOYDSFqjWWxyWqNWup3Do8KnNhHoMKHlLiO85VUYV4Xc0U+XB83YXdIkl1LMAsz2gZw4Z/HfkDgVjjKkWB4XhnOBbMRfoGXdkmK3cNM/AqCJdV8ZunDf+ypRImmMmMFNNv4Bc7pHrTfO+LCSM95k/aVXeoGDyUWUilz0qZtaJdQcND9i9DQ2qSB4siDxDwVw2+IOoRtDYD0a8F9xFZ58ax+64fUykVclVABRB9InBY6j94l0mad+ixo2d685Q7otXmJj5LSVlRoZIuSDoBvriiCdePDOmmt2zq09AZFiTZwdAVAGhGhVwjc89CbrFW6xGatZgbRkBL5V5sui+Zem/aK7uj6elDocfv4/bN8wPMkDPbtyZqtfX0BgzftKgerN6wjpAuyuU0FMygclWDmRlLkFcPOQ+0vXd1nM6thOb6YH4RxWbu9tMN4Lav9k9FCzbQD02gK2nhPsLADdAAZFnDDP+xMh7hu4gr+PhdrRrJnE='

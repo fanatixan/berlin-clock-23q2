@@ -2,13 +2,9 @@
   "name": "",
   "version": "1.0.0",
   "description": "Template for basing repositories off",
-  "homepage": "https://github.ibm.com/GOTREASA/#readme",
-  "bugs": {
-    "url": "https://github.ibm.com/GOTREASA//issues"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.ibm.com/GOTREASA/.git"
+    "url": "git+https://github.com/fanatixan/berlin-clock-23q2.git"
   },
   "license": "Apache-2.0",
   "author": "Gearoid O'Treasaigh",
