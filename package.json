@@ -11,10 +11,6 @@
   "main": "src/.js",
   "scripts": {
     "build:postman": "portman --cliOptionsFile portman/portman-cli.json",
-    "detect-secrets": "cross-env-shell docker run --rm -v ${INIT_CWD}:/code ibmcom/detect-secrets-hook:0.13.1.ibm.47.dss --baseline .secrets.baseline",
-    "detect-secrets:audit": "cross-env-shell docker run -it --rm -v ${INIT_CWD}:/code ibmcom/detect-secrets:0.13.1.ibm.47.dss audit .secrets.baseline",
-    "detect-secrets:exclude": "cross-env-shell docker run --rm -v ${INIT_CWD}:/code ibmcom/detect-secrets:0.13.1.ibm.47.dss scan --update .secrets.baseline --exclude-files",
-    "detect-secrets:update-baseline": "cross-env-shell docker run --rm -v ${INIT_CWD}:/code ibmcom/detect-secrets:0.13.1.ibm.47.dss scan --update .secrets.baseline",
     "lint": "eslint --cache --fix",
     "precommit": "lint-staged",
     "save": "./scripts/save.sh",
@@ -34,12 +30,11 @@
     "test:security:dev": "snyk test --dev",
     "test:unit": "jest ./test --verbose",
     "test:unit:watch": "npm run test:unit -- --watchAll",
+    "test:it": "jest ./it --verbose",
+    "test:it:watch": "npm run test:it -- --watchAll",
     "typesync": "typesync ./package.json"
   },
   "lint-staged": {
-    "*": [
-      "npm run detect-secrets"
-    ],
     "*.js": [
       "eslint --fix"
     ],
@@ -63,9 +58,11 @@
     "@pact-foundation/pact": "^11.0.2",
     "@types/cors": "^2.8.12",
     "@types/eslint": "^8.4.1",
+    "@types/eslint-config-prettier": "^6.11.0",
     "@types/eslint-plugin-prettier": "^3.1.0",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.4.0",
+    "@types/lint-staged": "^13.2.0",
     "@types/newman": "^5.3.0",
     "@types/nodemon": "^1.19.1",
     "@types/prettier": "^2.4.3",
@@ -94,7 +91,7 @@
     "snyk": "^1.841.0",
     "sort-package-json": "^1.53.1",
     "supertest": "^6.2.2",
-    "typesync": "^0.8.0"
+    "typesync": "^0.11.1"
   },
   "engines": {
     "node": "v16.14.0"

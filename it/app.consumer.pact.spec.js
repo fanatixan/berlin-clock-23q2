@@ -1,7 +1,7 @@
 const { pactWith } = require('jest-pact');
 // import { Matchers } from '@pact-foundation/pact';
 
-const api = require('./mock-api');
+const api = require('./mock/api');
 
 // const toBerlinTime = require('../src/BerlinClock');
 
